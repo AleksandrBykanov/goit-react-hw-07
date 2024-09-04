@@ -1,0 +1,15 @@
+.ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.li {
+  border: 1px solid black;
+  border-radius: 5px;
+  position: relative;
+  padding-left: 25px;
+  font-size: 20px;
+  background-color: rgba(255, 68, 0, 0.199);
+}
+

@@ -1,0 +1,39 @@
+body {
+  background-image: url('../public/iphone.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  &::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent;  
+      }
+}
+
+h1 {
+  text-align: center;
+}
+
+#root {
+  width: 400px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid rgb(88, 88, 88);
+  border-radius: 15px;
+  padding: 15px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+ul, ul li {
+	list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+

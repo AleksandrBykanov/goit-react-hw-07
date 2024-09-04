@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  height: 50px;
+  gap: 5px;
+}
+
+.field {
+  position: absolute;
+  height: 20px;
+  left: 70px;
+  width: 80%;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: 0;
+}
+
+.btn {
+  width: 120px;
+  height: 25px;
+  margin: 0 auto;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  background-color: orangered;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(255, 68, 0, 0.637);
+  }
+}
+
+.error {
+  font-size: 14px;
+  color: rgb(255, 30, 0);
+  background-color: transparent;
+  margin-left: 70px;  
+
+
+
+
+}
