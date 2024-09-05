@@ -1,14 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { fetchContacts } from "./contactsOps";
 
 const INITIAL_STATE = {
   contacts: {
-		items: [
-      {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
-      {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
-      {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
-      {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
-    ]
-	},
+    items: [],
+    loading: false,
+    error: null
+  },
 }
 
 const profileSlice = createSlice({
@@ -21,7 +19,18 @@ const profileSlice = createSlice({
     deleteContact: (state, action) => {
       state.contacts.items = state.contacts.items.filter((profile) => profile.id !== action.payload)
     }
-  }
+  },
+  extraReducers: (builder) => builder.addCase(fetchContacts.pending, (state) => {
+    state.loading = true;
+    state.error = null;
+  }).addCase(fetchContacts.fulfilled, (state, action) => {
+    state.loading = false;
+    state.contacts.items = action.payload;
+  }).addCase(fetchContacts.rejected, (state, action) => {
+    state.loading = false;
+    state.error = action.payload;
+  }),
+
 })
 
 export const contactsSlice = profileSlice.reducer;
